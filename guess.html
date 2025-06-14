@@ -77,6 +77,10 @@
 		number.textContent= `Your guessing number is ${your_num}`
 		if (secretNumber==your_num) {
 			result.textContent='🎊You🤩Win🎊'
+			document.querySelector('#result').style.fontFamily = 'impact'
+			document.querySelector('#result').style.fontSize = '4.5rem'
+			document.querySelector('#result').style.color ='magenta'
+			document.querySelector('#result').style.backgroundColor = 'springgreen'
 		}
 		else if (your_num==0) {
 			result.textContent = `You did'nt select any number`
@@ -89,7 +93,6 @@
 			result.textContent= `It's too Low〽`
 		}
 	})
-	console.log(secretNumber)
 </script>
 </body>
 </html>
