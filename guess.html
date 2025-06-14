@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Guess-The-Number</title>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="icon" href="guess.png">
+    <style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: limegreen;
+		}
+		h1{
+			font-size: 8em;
+			font-family:  'Press Start 2P', cursive;
+			margin-bottom: 30px;
+			margin-top: 10px;
+		}
+		strong{
+			font-size: 3rem;
+			font-family: 'Kode Mono', monospace;
+		}
+		button:hover{
+			cursor: pointer;
+		}
+		#btn{
+			height: 15vh;
+			width: 20vw;
+			font-size: 3rem;
+			border: none;
+			font-family: 'Pixelify Sans', sans-serif;
+			font-weight: bolder;
+			padding: 3px;
+			background-color: seagreen;
+			margin: 20px;
+		}
+		input{
+			height: 8vh;
+			width: 5vw;
+			margin: 20px;
+			padding: 5px;
+			font-size: 2rem;
+			font-family:  'Share Tech Mono', monospace;
+			font-weight: bolder;
+		}
+		p{
+			font-size: 3rem;
+			font-family: 'VT323', monospace;
+			font-weight: 900;
+			background-color: aliceblue;
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+<h1>Guess It!</h1>
+<p id="result">Guess a number between 1 to 10</p>
+<strong id="your-num">Number</strong>
+<input id="num" type="number" placeholder="00">
+<button id="btn">Guess!</button>
+<script>
+	const secretNumber = Math.round(Math.random()*10)
+	
+	btn.addEventListener('click',function () {
+    let result = document.querySelector('#result')
+    const btn = document.querySelector('#btn')
+    let number = document.querySelector('#your-num')
+    let your_num = document.querySelector('#num').value
+		number.textContent= `Your guessing number is ${your_num}`
+		if (secretNumber==your_num) {
+			result.textContent='🎊You🤩Win🎊'
+		}
+		else if (your_num==0) {
+			result.textContent = `You did'nt select any number`
+			number.textContent= `Your guessing number is L🤪L}`
+		}
+		else if(your_num>secretNumber){
+			result.textContent=`It's Too high❗`
+		}
+		else if (your_num<secretNumber) {
+			result.textContent= `It's too Low〽`
+		}
+	})
+	console.log(secretNumber)
+</script>
+</body>
+</html>
